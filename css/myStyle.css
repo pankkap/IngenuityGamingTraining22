@@ -1,0 +1,15 @@
+p {
+  text-align: center;
+  color: red;
+  background-color: yellow;
+  font-family: arial;
+  border: 2px solid green;
+}
+
+#p2,
+.team-1,
+* {
+  background-color: skyblue;
+  color: red;
+  font-size: 24px;
+}
