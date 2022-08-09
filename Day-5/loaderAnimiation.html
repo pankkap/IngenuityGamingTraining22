@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loader Animation</title>
+    <style>
+      .container {
+        height: 100vh;
+        width: 100%;
+        background-image: linear-gradient(to right top, blue 50%, deeppink 50%);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .box {
+        width: 150px;
+        height: 150px;
+        border: 20px solid rgba(255, 255, 255, 0.511);
+        border-top: 20px solid white;
+        border-radius: 50%;
+        animation: loader 2s linear infinite;
+      }
+
+      @keyframes loader {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      p {
+        font-family: arial;
+        font-size: 30px;
+        font-weight: bold;
+        color: white;
+        text-transform: uppercase;
+        animation: popup 1s linear infinite;
+      }
+
+      @keyframes popup {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box"></div>
+      <p>loading</p>
+    </div>
+  </body>
+</html>
