@@ -36,7 +36,6 @@ console.log(mixedArray);
 for (var i = 0; i < mixDSArray.length; i++) console.log(mixDSArray[i]);
 
 // creating an Array using Constructor
-
 var newArr = new Array("Sachin", "Manish", "Aastha", "Payal", "Gaurav");
 
 newArr[5] = "New Element";
@@ -55,17 +54,18 @@ console.log(newArr);
 // Reverse and Sort function
 
 // newArr.sort();
-
 var reversedArr = [...newArr].reverse();
 console.log(newArr);
 console.log(reversedArr);
 
+// Iterate over Array using for loop
 for (var i = 0; i < newArr.length; i++) {
   console.log(newArr[i]);
 }
 
 var myArr = ["Sachin", "Manish", "Aastha", "Payal", "Gaurav"];
 
+// Iterate over Array using forEach()
 myArr.forEach(myFunction); //callback function: It is function inwhich function calls another function
 
 function myFunction(item) {
