@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Storage</title>
+  </head>
+  <body>
+    <h1>Local Storage | Session Storage</h1>
+    <h2>Data Recieved From Storage</h2>
+    <p id="output"></p>
+    <br />
+    <a href="./localStorage.html">Back Page</a>
+    <script>
+      // selectors
+      var output = document.getElementById("output");
+
+      // Recieving Data from Local Storage
+      var data = JSON.parse(window.sessionStorage.getItem("Info"));
+      if (data == null) {
+        output.innerText = "No Data Available in Local Storage";
+      } else
+        output.innerText = data.uname + " " + data.password + " " + data.age;
+    </script>
+  </body>
+</html>
