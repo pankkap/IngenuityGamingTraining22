@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Window Screen</title>
+    <style>
+      body {
+        background-color: teal;
+        border: 5px solid yellow;
+        overflow: scroll;
+
+        /* margin: 0;
+        border: none;
+        overflow: hidden; */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Screen Sizes</h1>
+    <button onclick="windowSize()">Window Size</button>
+    <button onclick="clientWindowSize()">Client Window Size</button>
+    <button onclick="getResolution();">Get Resolution</button>
+    <script>
+      function windowSize() {
+        var w = window.innerWidth;
+        var h = window.innerHeight;
+        console.log("Width: " + w + ", " + "Height: " + h);
+      }
+      function clientWindowSize() {
+        var w = document.body.clientWidth;
+        var h = document.body.clientHeight;
+        console.log("Width: " + w + ", " + "Height: " + h);
+      }
+      function getResolution() {
+        console.log("Your screen is: " + screen.width + "x" + screen.height);
+      }
+    </script>
+  </body>
+</html>

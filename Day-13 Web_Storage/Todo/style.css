@@ -11,6 +11,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   min-height: 100vh;
 }
+.app-container {
+  min-height: 100vh;
+  display: none;
+}
 header,
 form {
   height: 15vh;
@@ -42,3 +46,50 @@ form button:hover {
 
 /* ----------------New List Container----------------- */
 
+.todo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.todo-list {
+  min-width: 25%;
+  list-style: none;
+}
+.todo {
+  margin: 8px;
+  font-size: 24px;
+  background: white;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.todo li {
+  flex: 1;
+}
+.cmplt-btn,
+.delete-btn {
+  background-color: darkseagreen;
+  color: white;
+  border: none;
+  padding: 16px;
+  cursor: pointer;
+  font-size: 16px;
+  outline: none;
+}
+.delete-btn {
+  background-color: deeppink;
+}
+.todo-item {
+  margin: 0 8px;
+}
+
+.fa-trash,
+.fa-check {
+  pointer-events: none;
+}
+.checked {
+  text-decoration: line-through;
+  opacity: 0.5;
+}

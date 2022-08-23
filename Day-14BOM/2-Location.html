@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 style="text-align: center">Location Object</h1>
+    <button onclick="redirection()">Redirect to Other Page</button>
+    <script>
+      // Location Object
+      console.log("Page location is " + window.location.href);
+      console.log("Page hostname is " + window.location.hostname);
+      console.log("Page path is " + window.location.pathname);
+      console.log("Page protocol is " + window.location.protocol);
+      console.log("Port number is " + window.location.port);
+
+      url = "https://www.beta-labs.in/p/about-me.html";
+      function redirection() {
+        // location.assign(url); // load new Page
+        // location.replace(url); // load new page, but can't use back
+        // location.href = url; // Similar to assign()
+      }
+
+      // setTimeout(() => {
+      //   location.assign(url);
+      // }, 5000);
+
+      //   setTimeout(() => {
+      //     location.reload();
+      //     console.log("Page Reload");
+      //   }, 3000);
+    </script>
+  </body>
+</html>
+
+<!-- Difference between href, assign(), replace() -->

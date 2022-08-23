@@ -6,10 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Loader Animation</title>
     <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
       .container {
         height: 100vh;
         width: 100%;
-        background-image: linear-gradient(to right top, blue 50%, deeppink 50%);
+        background-image: linear-gradient(to right top, blue, pink);
 
         display: flex;
         justify-content: center;
@@ -20,8 +25,8 @@
       .box {
         width: 150px;
         height: 150px;
-        border: 20px solid rgba(255, 255, 255, 0.511);
-        border-top: 20px solid white;
+        border: 13px solid rgba(255, 255, 255, 0.511);
+        border-top: 13px solid white;
         border-radius: 50%;
         animation: loader 2s linear infinite;
       }
@@ -35,6 +40,7 @@
         }
       }
       p {
+        margin-top: 10px;
         font-family: arial;
         font-size: 30px;
         font-weight: bold;

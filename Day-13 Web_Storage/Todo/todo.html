@@ -9,6 +9,62 @@
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link rel="stylesheet" href="style.css" />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        height: 100vh;
+        width: 100%;
+        background-image: linear-gradient(to right top, blue, pink);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .box {
+        width: 150px;
+        height: 150px;
+        border: 13px solid rgba(255, 255, 255, 0.511);
+        border-top: 13px solid white;
+        border-radius: 50%;
+        animation: loader 2s linear infinite;
+      }
+
+      @keyframes loader {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      p {
+        margin-top: 10px;
+        font-family: arial;
+        font-size: 30px;
+        font-weight: bold;
+        color: white;
+        text-transform: uppercase;
+        animation: popup 1s linear infinite;
+      }
+
+      @keyframes popup {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
   </head>
   <body>
     <header>To-do List</header>

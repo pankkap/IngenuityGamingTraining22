@@ -1,0 +1,24 @@
+<html>
+  <head> </head>
+  <body>
+    <input type="button" value="Back" onclick="goBack()" />
+
+    <script>
+      function goBack() {
+        window.history.back();
+      }
+
+      function goForward() {
+        window.history.forward();
+      }
+
+      // //Going to a Specific Page
+      // //You can also load specific page from the session history using the go() method of the History object i.e. history.go().
+      // window.history.go(-2); // Go back two pages
+      // window.history.go(-1); // Go back one page
+      // window.history.go(0); // Reload the current page
+      // window.history.go(1); // Go forward one page
+      // window.history.go(2); // Go forward two pages
+    </script>
+  </body>
+</html>

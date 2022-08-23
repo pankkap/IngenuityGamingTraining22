@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Window Object</title>
+  </head>
+  <body>
+    <button onclick="OpenWindow()">Open About Page</button>
+
+    <script>
+      window.onload = function () {
+        setTimeout(() => {
+          OpenWindow();
+        }, 5000);
+      };
+      function OpenWindow() {
+        let features = "height=500,width=600",
+          url = "./1A-Window.html";
+
+        let newWindow = window.open(url, "New Window", features);
+        // let newWindow = window.open(url, "_blank", features);
+        // let newWindow = window.open(url, "_top", features);
+        // let newWindow = window.open(url, features);
+        newWindow.moveTo(300, 100);
+
+        setTimeout(() => {
+          newWindow.close();
+        }, 60000);
+      }
+    </script>
+  </body>
+</html>
