@@ -1,0 +1,22 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.806);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+#canvas
+{
+    margin-top: 20px;
+    background-color: azure;
+    border-radius: 20px;
+}
