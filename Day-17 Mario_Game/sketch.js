@@ -1,12 +1,13 @@
-
-
 // Global Scope
 var bg, bgImage;
 var mario, mario_running;
 var ground;
 var brickImage, bricksGroup;
-var coins, coinsGroup;
+
+var coinImage, coinsGroup;
 var coinScore = 0;
+
+var coinSound;
 
 // Load Assets
 function preload() {
@@ -20,6 +21,16 @@ function preload() {
     "images/mar6.png"
   );
   brickImage = loadImage("images/brick.png");
+  coinImage = loadAnimation(
+    "images/con1.png",
+    "images/con2.png",
+    "images/con3.png",
+    "images/con4.png",
+    "images/con5.png",
+    "images/con6.png"
+  );
+  coinSound = loadSound("sounds/coinSound.mp3");
+  jumpSound = loadSound("sounds/jump.mp3");
 }
 
 // create basic Scaleton with their required credentials
@@ -42,7 +53,7 @@ function setup() {
   // create Ground
   ground = createSprite(200, 580, 400, 10);
   bricksGroup = new Group();
- coinsGroup = new Group();
+  coinsGroup = new Group();
 }
 
 // Used to redraw the Objects on the canvas
@@ -52,7 +63,10 @@ function draw() {
   if (bg.x < 100) bg.x = bg.width / 4;
 
   // mario Fly
-  if (keyDown("space")) mario.velocityY = -10;
+  if (keyDown("space")) {
+    mario.velocityY = -10;
+    jumpSound.play();
+  }
 
   // add Gravity
   mario.velocityY = mario.velocityY + 0.5;
@@ -78,8 +92,24 @@ function draw() {
   }
 
   generateCoins();
+
+  for (var i = 0; i < coinsGroup.length; i++) {
+    var temp = coinsGroup.get(i);
+    if (mario.isTouching(temp)) {
+      temp.destroy();
+      coinSound.play();
+      coinScore++;
+      temp = null;
+    }
+  }
+
   // Redraw Objects
   drawSprites();
+
+  // display Score
+  textSize(20);
+  fill("brown");
+  text("Coins Collected: " + coinScore, 500, 50);
 }
 
 function generateBricks() {
@@ -93,5 +123,17 @@ function generateBricks() {
     brick.velocityX = -5;
     brick.lifetime = 250;
     bricksGroup.add(brick);
+  }
+}
+
+function generateCoins() {
+  if (frameCount % 50 == 0) {
+    var coin = createSprite(1200, 100, 40, 10);
+    coin.y = random(50, 450);
+    coin.addAnimation("rotate", coinImage);
+    coin.scale = 0.1;
+    coin.velocityX = -5;
+    coin.lifetime = 250;
+    coinsGroup.add(coin);
   }
 }
