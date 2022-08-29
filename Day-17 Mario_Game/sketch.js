@@ -1,7 +1,12 @@
+
+
 // Global Scope
 var bg, bgImage;
 var mario, mario_running;
 var ground;
+var brickImage, bricksGroup;
+var coins, coinsGroup;
+var coinScore = 0;
 
 // Load Assets
 function preload() {
@@ -14,6 +19,7 @@ function preload() {
     "images/mar5.png",
     "images/mar6.png"
   );
+  brickImage = loadImage("images/brick.png");
 }
 
 // create basic Scaleton with their required credentials
@@ -35,6 +41,8 @@ function setup() {
 
   // create Ground
   ground = createSprite(200, 580, 400, 10);
+  bricksGroup = new Group();
+ coinsGroup = new Group();
 }
 
 // Used to redraw the Objects on the canvas
@@ -53,6 +61,37 @@ function draw() {
   mario.collide(ground);
   ground.visible = false;
 
+  // call GenerateBricks
+  generateBricks();
+
+  for (var i = 0; i < bricksGroup.length; i++) {
+    var temp = bricksGroup.get(i);
+    if (mario.isTouching(temp)) {
+      mario.collide(temp);
+    }
+  }
+  if (mario.x < 200) {
+    mario.x = 200;
+  }
+  if (mario.y < 50) {
+    mario.y = 50;
+  }
+
+  generateCoins();
   // Redraw Objects
   drawSprites();
+}
+
+function generateBricks() {
+  if (frameCount % 80 == 0) {
+    console.log(frameCount);
+
+    var brick = createSprite(1200, 100, 40, 10);
+    brick.y = random(50, 450);
+    brick.addImage(brickImage);
+    brick.scale = 0.5;
+    brick.velocityX = -5;
+    brick.lifetime = 250;
+    bricksGroup.add(brick);
+  }
 }
