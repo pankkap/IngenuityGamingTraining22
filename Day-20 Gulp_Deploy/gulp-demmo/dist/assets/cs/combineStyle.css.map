@@ -1,0 +1,1 @@
+{"version":3,"sources":["style.css"],"names":[],"mappings":"AAAA,EACA,SAAA,CACA,QAAA,CACA,qBACA,CAEA,OACA,aAAA,CACA,WACA","file":"combineStyle.css","sourcesContent":["* {\r\n  padding: 0;\r\n  margin: 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\ncanvas {\r\n  display: block;\r\n  margin: auto;\r\n}\r\n"]}
