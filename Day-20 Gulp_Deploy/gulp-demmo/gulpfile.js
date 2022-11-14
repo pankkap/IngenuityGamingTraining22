@@ -1,5 +1,9 @@
-let gulp = require("gulp");
+let gulp = require("gulp"); //es5
 const { src, dest, parallel, series, watch } = require("gulp");
+
+
+
+
 const imagemin = require("gulp-imagemin");
 const sourcemaps = require("gulp-sourcemaps");
 const concat = require("gulp-concat");
@@ -8,9 +12,17 @@ const postcss = require("gulp-postcss");
 const cssnano = require("cssnano");
 const autoprefixer = require("autoprefixer");
 
+
+
 function copyHtml() {
   return src("src/*.html").pipe(dest("dist"));
 }
+
+
+
+
+
+
 
 function imgTask() {
   return src("src/images/*").pipe(imagemin()).pipe(dest("dist/images"));
